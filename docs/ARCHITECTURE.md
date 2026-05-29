@@ -133,7 +133,7 @@ Sortare implicită în DAO: `ORDER BY isDone ASC, priority ASC, dueDate ASC` (HI
 |---|---|---|
 | `id` | `Long` (PK, autoGenerate) | |
 | `date` | `LocalDate` | indexat |
-| `mood` | `Mood` enum (GREAT/GOOD/OKAY/BAD) | opțional |
+| `mood` | `Mood?` enum (GREAT/GOOD/OKAY/BAD) | opțional |
 | `content` | `String` | textul reflecției |
 | `updatedAt` | `Long` | |
 
