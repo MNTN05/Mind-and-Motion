@@ -24,12 +24,6 @@ data class Session(
     val email: String
 )
 
-/**
- * Wrapper peste DataStore pentru preferințele aplicației.
- *
- * NOTĂ pentru [TU]: PomodoroViewModel / PomodoroService (Epic 3) ar trebui să citească
- * [pomodoroPrefs] în loc să hardcodeze duratele de 25/5/15 minute.
- */
 class Prefs(private val context: Context) {
 
     private object Keys {

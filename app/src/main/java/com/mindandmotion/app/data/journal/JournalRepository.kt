@@ -3,10 +3,6 @@ package com.mindandmotion.app.data.journal
 import kotlinx.coroutines.flow.Flow
 import java.time.LocalDate
 
-/**
- * Sursă unică de adevăr pentru intrările de journal.
- * Nu cunoaște nimic despre UI — JournalViewModel decide cum afișează datele.
- */
 class JournalRepository(private val journalDao: JournalDao) {
 
     fun observeAllEntries(): Flow<List<JournalEntryEntity>> = journalDao.observeAll()

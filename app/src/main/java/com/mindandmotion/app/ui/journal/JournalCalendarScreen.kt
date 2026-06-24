@@ -105,7 +105,6 @@ private fun CalendarGrid(
     onDayClick: (LocalDate) -> Unit
 ) {
     val firstOfMonth = month.atDay(1)
-    // dayOfWeek.value: Luni=1 ... Duminică=7 -> offset ca săptămâna să înceapă lunea
     val leadingBlanks = firstOfMonth.dayOfWeek.value - 1
     val daysInMonth = month.lengthOfMonth()
     val cells: List<LocalDate?> = List(leadingBlanks) { null } + (1..daysInMonth).map { month.atDay(it) }

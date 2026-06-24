@@ -5,10 +5,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-/**
- * Punct unic de construcție pentru client-ul HTTP + Retrofit.
- * API public, fără autentificare: https://dummyjson.com/docs/quotes
- */
 object QuotesApi {
 
     private const val BASE_URL = "https://dummyjson.com/"

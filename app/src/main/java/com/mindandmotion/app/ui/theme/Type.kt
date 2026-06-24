@@ -6,11 +6,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-/**
- * Typography() vine deja cu valori M3 sensibile pentru toate stilurile;
- * suprascriem doar headlineSmall, folosit pe titlurile ecranelor principale
- * (ex: AboutScreen, headerul calendarului din Journal).
- */
 val MindAndMotionTypography = Typography(
     headlineSmall = TextStyle(
         fontFamily = FontFamily.Default,

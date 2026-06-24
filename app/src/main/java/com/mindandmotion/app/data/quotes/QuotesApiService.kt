@@ -5,11 +5,9 @@ import retrofit2.http.Query
 
 interface QuotesApiService {
 
-    /** Un singur citat aleator — folosit ca "citatul zilei" pe InspirationScreen. */
     @GET("quotes/random")
     suspend fun getRandomQuote(): QuoteDto
 
-    /** Listă paginată de citate — folosită pentru lista scrollabilă. */
     @GET("quotes")
     suspend fun getQuotes(
         @Query("limit") limit: Int = 20,
