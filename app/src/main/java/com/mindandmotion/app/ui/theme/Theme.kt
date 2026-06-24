@@ -36,14 +36,6 @@ private val DarkColors = darkColorScheme(
     error = md_dark_error
 )
 
-/**
- * Tema vizuală a aplicației.
- *
- * @param darkTheme implicit urmează tema sistemului; [TU] poate forța true/false
- *   citind preferința din Settings (MM-40 -> Prefs.theme) în MainActivity.
- * @param useDynamicColor Material You (Android 12+); default false, ca aplicația
- *   să aibă o identitate vizuală proprie indiferent de telefon.
- */
 @Composable
 fun MindAndMotionTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

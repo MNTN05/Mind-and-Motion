@@ -6,10 +6,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
 import java.time.LocalDate
 
-/**
- * Fake DAO în memorie, pentru teste unitare — nu necesită Room/Robolectric,
- * rulează pur pe JVM.
- */
 class FakeJournalDao : JournalDao {
 
     private val entries = MutableStateFlow<List<JournalEntryEntity>>(emptyList())
@@ -25,7 +21,6 @@ class FakeJournalDao : JournalDao {
     override fun observeEntryDates() = entries.map { list -> list.map { it.date } }
 
     override suspend fun upsert(entry: JournalEntryEntity): Long {
-        // simulează unique index pe `date`: o intrare nouă pe aceeași zi o înlocuiește pe cea veche
         val withoutSameDate = entries.value.filterNot { it.date == entry.date }
         val id = if (entry.id != 0L) entry.id else (entries.value.maxOfOrNull { it.id } ?: 0L) + 1
         entries.value = withoutSameDate + entry.copy(id = id)

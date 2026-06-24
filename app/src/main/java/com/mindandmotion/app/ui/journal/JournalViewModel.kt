@@ -116,9 +116,6 @@ class JournalViewModel(
     }
 }
 
-/**
- * Factory manuală (fără Hilt, conform ARCHITECTURE.md) — instanțiată din AppContainer ([TU]).
- */
 class JournalViewModelFactory(
     private val repository: JournalRepository
 ) : ViewModelProvider.Factory {

@@ -37,11 +37,8 @@ class QuotesViewModel(
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isLoading = true, errorMessage = null)
 
-            // citat random pentru "Citatul zilei" — best-effort, nu blocăm ecranul dacă pică doar acesta
             val featured = repository.getRandomQuote().getOrNull()
 
-            // skip aleator într-o fereastră fixă, ca "Reîncarcă" să arate cu adevărat alte citate,
-            // nu aceeași primă pagină de fiecare dată
             repository.getQuotes(limit = 20, skip = Random.nextInt(0, 200))
                 .onSuccess { quotes ->
                     _uiState.value = QuotesUiState(

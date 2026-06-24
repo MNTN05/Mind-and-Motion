@@ -23,9 +23,6 @@ interface JournalDao {
     @Query("SELECT date FROM journal_entries")
     fun observeEntryDates(): Flow<List<LocalDate>>
 
-    // unique index pe `date` => un INSERT cu REPLACE pe o zi care are deja o intrare
-    // o suprascrie automat, chiar dacă id-ul diferă. E exact comportamentul de
-    // "o intrare pe zi" cerut în ARCHITECTURE.md.
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(entry: JournalEntryEntity): Long
 

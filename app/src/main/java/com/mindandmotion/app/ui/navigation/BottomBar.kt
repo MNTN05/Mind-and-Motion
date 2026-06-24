@@ -12,11 +12,6 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 
-/**
- * Bottom navigation bar with the four [TopLevelDestination]s. Tapping a tab
- * navigates to its route while keeping a single copy on the back stack and
- * preserving each tab's state.
- */
 @Composable
 fun BottomBar(navController: NavController) {
     val currentBackStackEntry by navController.currentBackStackEntryAsState()
@@ -29,7 +24,6 @@ fun BottomBar(navController: NavController) {
                 selected = selected,
                 onClick = {
                     navController.navigate(destination.route) {
-                        // Pop up to the start so the back stack doesn't grow with every tab tap.
                         popUpTo(navController.graph.findStartDestination().id) {
                             saveState = true
                         }

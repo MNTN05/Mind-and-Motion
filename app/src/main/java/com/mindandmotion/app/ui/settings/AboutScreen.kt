@@ -17,10 +17,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.mindandmotion.app.ui.components.AppTopBar
 
-/**
- * @param appVersion implicit "1.0"; [TU] poate trimite BuildConfig.VERSION_NAME
- *   dacă activează `buildFeatures.buildConfig = true` în app/build.gradle.kts.
- */
 @Composable
 fun AboutScreen(
     appVersion: String = "1.0",
